@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Yes Chad - $chad token on SOL</title>
+        <title>Yes Chad - $chad Token On Solana</title>
         <meta
           name="description"
           content="Yes Chad embodies internet culture's power to transform divisive elements into universal symbols of coolness and humor, evolving humanity's collective psyche one 'yes' at a time."
@@ -93,11 +93,11 @@ export default function Home() {
                 Welcome, Chad
               </h1>
               <div className="text-xl leading-8 font-semibold mb-6">
-                Yes Chad has become an emblem of internet culture&#39;s ability
+                <strong>Yes Chad</strong> has become an emblem of internet culture&#39;s ability
                 to take something potentially divisive, strip it of its original
                 context, and turn it into a universal symbol of internet
                 coolness and humor. It&#39;s like watching humanity&#39;s
-                collective psyche evolve in real-time, one “yes” at a time.
+                collective psyche evolve in real-time, one &ldquo;yes&rdquo; at a time.
               </div>
               <div className="flex items-center space-x-6 justify-center md:justify-start">
                 <a
@@ -248,10 +248,10 @@ export default function Home() {
                 </h1>
                 <div className="text-xl leading-8 space-y-8">
                   <p>
-                    The “Yes Chad” or “Nordic Gamer” meme sprouted from the
+                    The &ldquo;<strong>Yes Chad</strong>&rdquo; or &ldquo;<strong>Nordic Gamer</strong>&rdquo; meme sprouted from the
                     fertile grounds of 4chan&#39;s /pol/ board, where it was
                     initially part of a meme comparing Nordic and Mediterranean
-                    archetypes. This character, with his stoic, “yes”-affirming
+                    archetypes. This character, with his stoic, &ldquo;yes&rdquo;-affirming
                     demeanor, became a symbol of unbothered confidence. Born in
                     August 2019, thanks to a tweet by @yachs_91, it quickly
                     became an internet sensation, embodying hyper-masculine
@@ -259,10 +259,10 @@ export default function Home() {
                     and cultural stereotypes.
                   </p>
                   <p>
-                    Over time, Yes Chad transcended its controversial roots.
+                    Over time, <strong>Yes Chad</strong> transcended its controversial roots.
                     It&#39;s now often used to represent a figure of calm in the
-                    storm of internet debates, a meme that says, “I&#39;m above
-                    this fray.” It&#39;s been adopted across various platforms
+                    storm of internet debates, a meme that says, &ldquo;I&#39;m above
+                    this fray.&rdquo; It&#39;s been adopted across various platforms
                     for its simplicity and the humorous, often ironic,
                     acknowledgment of life&#39;s absurdities.
                   </p>
