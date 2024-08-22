@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Yes Chad – $chad token on SOL</title>
+        <title>Yes Chad - $chad token on SOL</title>
         <meta name="description" content="Yes Chad embodies internet culture's power to transform divisive elements into universal symbols of coolness and humor, evolving humanity's collective psyche one 'yes' at a time." />
       </Head>
       <div className={`${font.className} bg-[#67D9FD] text-lg`}>
@@ -272,7 +272,7 @@ export default function Home() {
             CHART
           </h2>
           <div id="dexscreener-embed">
-            <iframe src="https://dexscreener.com/solana/7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump?embed=1"></iframe>
+            <iframe src="https://dexscreener.com/solana/7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump?embed=1" loading="lazy"></iframe>
           </div>
         </div>
         <div className="bg-[#2B8CAD]">
