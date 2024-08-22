@@ -40,8 +40,8 @@ export default function Home() {
             <div>
               <Image
                 src="/chad.gif"
-                width={445}
-                height={480}
+                width={200}
+                height={200}
                 className="w-20 sm:w-28 md:w-32 h-auto block mx-auto"
                 alt=""
                 unoptimized
@@ -185,8 +185,8 @@ export default function Home() {
             <div>
               <Image
                 src="/chad.png"
-                width={722}
-                height={754}
+                width={306}
+                height={320}
                 className="w-72 h-auto mx-auto"
                 alt=""
               />
@@ -281,8 +281,8 @@ export default function Home() {
             <div className="px-4 py-8">
               <Image
                 src="/cover-1.jpg"
-                width={864}
-                height={1000}
+                width={605}
+                height={700}
                 className="w-auto h-auto mx-auto"
                 alt=""
               />
