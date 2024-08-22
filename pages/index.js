@@ -50,7 +50,7 @@ export default function Home() {
             <div className="flex justify-center gap-4 font-semibold flex-wrap mb-4">
               <a
                 href="https://t.me/solyeschad"
-                className="flex items-center bg-amber-100 px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                className="flex items-center bg-amber-100 hover:bg-cyan-200 px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                 target="_blank"
                 title="Telegram"
               >
@@ -64,7 +64,7 @@ export default function Home() {
               </a>
               <a
                 href="https://x.com/solyeschad"
-                className="flex items-center bg-amber-100 px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                className="flex items-center bg-amber-100 hover:bg-cyan-200 px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                 target="_blank"
                 title="X"
               >
@@ -78,7 +78,7 @@ export default function Home() {
               </a>
               <a
                 href="https://jup.ag/swap/SOL-7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump"
-                className="flex items-center bg-amber-100 px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                className="flex items-center bg-amber-100 hover:bg-cyan-200 px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                 target="_blank"
               >
                 BUY $CHAD
@@ -102,7 +102,7 @@ export default function Home() {
               <div className="flex items-center space-x-6 justify-center md:justify-start">
                 <a
                   href="https://birdeye.so/token/7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump?chain=solana"
-                  className="flex items-center bg-white px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                  className="flex items-center bg-white hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                   target="_blank"
                   title="Birdeye"
                 >
@@ -123,7 +123,7 @@ export default function Home() {
                 </a>
                 <a
                   href="#"
-                  className="flex items-center bg-white px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                  className="flex items-center bg-white hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                   target="_blank"
                   title="Coingecko"
                 >
@@ -145,7 +145,7 @@ export default function Home() {
                 </a>
                 <a
                   href="https://dexscreener.com/solana/fri5dhtacw7xkcu91pqtvwozgdmdvp8xinbkzcdrrcd9"
-                  className="flex items-center bg-white px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                  className="flex items-center bg-white hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                   target="_blank"
                   title="Dexscreener"
                 >
@@ -162,7 +162,7 @@ export default function Home() {
                 </a>
                 <a
                   href="https://www.dextools.io/app/en/solana/pair-explorer/FRi5dHtacw7xkcU91pqTvWoZgDMDvP8XinbkzCDRRCd9"
-                  className="flex items-center bg-white px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                  className="flex items-center bg-white hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                   target="_blank"
                   title="Dextools"
                 >
@@ -195,10 +195,10 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto mb-12 px-4">
           <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">
-            CHADONOMICS
+            Chadonomics
           </h2>
           <div class="grid md:grid-cols-2 gap-4 text-center">
-            <div className="bg-white px-4 py-8 rounded-xl shadow-lg">
+            <div className="bg-white px-4 py-8 rounded-2xl ring-1 ring-cyan-200">
               <h3 className="text-3xl font-semibold mb-4">Contract Address</h3>
               <div class="flex items-center">
                 <input
@@ -209,7 +209,7 @@ export default function Home() {
                 />
                 <button
                   type="button"
-                  className="ml-2 border px-2 py-1 rounded-md text-center"
+                  className="ml-2 border px-2 py-1 rounded-md text-center hover:bg-cyan-200"
                   onClick={handleCopy}
                   disabled={isDisabled}
                 >
@@ -217,11 +217,11 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className="bg-white px-4 py-8 rounded-xl shadow-lg">
+            <div className="bg-white px-4 py-8 rounded-2xl ring-1 ring-cyan-200">
               <h3 className="text-3xl font-semibold mb-4">Symbol</h3>
               <div className="font-semibold text-2xl">$chad</div>
             </div>
-            <div className="bg-white px-4 py-8 rounded-xl shadow-lg">
+            <div className="bg-white px-4 py-8 rounded-xl ring-1 ring-cyan-200">
               <h3 className="text-3xl font-semibold mb-4">Network</h3>
               <div>
                 <Image
@@ -233,23 +233,14 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="bg-white px-4 py-8 rounded-xl shadow-lg">
+            <div className="bg-white px-4 py-8 rounded-2xl ring-1 ring-cyan-200">
               <h3 className="text-3xl font-semibold mb-4">Supply</h3>
               <div className="font-semibold text-2xl">999,960,379.72</div>
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mb-12 px-4 shadow-lg">
-          <Image
-            src="/cover-0.jpg"
-            width={945}
-            height={652}
-            className="w-full h-auto rounded-lg"
-            alt=""
-          />
-        </div>
-        <div className="max-w-7xl mx-auto mb-16 px-4">
-          <div class="grid md:grid-cols-2 gap-4 bg-white rounded-xl shadow-lg">
+        <div className="max-w-7xl mx-auto mb-12 px-4">
+          <div class="grid md:grid-cols-2 gap-4 bg-white rounded-2xl ring-1 ring-cyan-200">
             <div className="px-4 md:px-8 py-8">
               <div>
                 <h1 className="text-4xl md:text-6xl font-black mb-4 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-gray-300">
@@ -278,7 +269,7 @@ export default function Home() {
                   <p>
                     <a
                       href="https://jup.ag/swap/SOL-7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump"
-                      className="bg-white px-4 py-2 rounded-md outline outline-2 font-semibold shadow-solid-primary shadow-black"
+                      className="bg-white hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 font-semibold shadow-solid-primary shadow-black"
                       target="_blank"
                     >
                       BUY $CHAD ON JUPITER SWAP
@@ -298,9 +289,18 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="max-w-7xl mx-auto mb-16 px-4">
+          <Image
+            src="/cover-0.jpg"
+            width={945}
+            height={652}
+            className="w-full h-auto rounded-2xl ring-1 ring-cyan-200"
+            alt=""
+          />
+        </div>
         <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4">
           <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">
-            CHART
+            Chart
           </h2>
           <iframe
             width="100%"
@@ -309,7 +309,7 @@ export default function Home() {
             frameborder="0"
             loading="lazy"
             allowFullScreen
-            className="rounded-lg shadow-lg"
+            className="rounded-2xl ring-1 ring-cyan-200"
           ></iframe>
         </div>
         <div className="bg-[#2B8CAD]">
