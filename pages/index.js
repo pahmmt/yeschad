@@ -43,7 +43,7 @@ export default function Home() {
                 src="/chad.gif"
                 width={200}
                 height={200}
-                className="w-20 sm:w-28 md:w-32 h-auto block mx-auto"
+                className="w-20 sm:w-24 md:w-28 h-auto block mx-auto"
                 alt="Yes Chad Figure"
                 unoptimized
               />
