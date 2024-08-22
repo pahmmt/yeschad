@@ -44,7 +44,7 @@ export default function Home() {
                 width={200}
                 height={200}
                 className="w-20 sm:w-28 md:w-32 h-auto block mx-auto"
-                alt=""
+                alt="Yes Chad Figure"
                 unoptimized
               />
             </div>
@@ -191,7 +191,7 @@ export default function Home() {
                 height={320}
                 className="w-72 h-auto mx-auto"
                 priority="low"
-                alt=""
+                alt="Yes Chad Portrait"
               />
             </div>
           </div>
@@ -290,7 +290,7 @@ export default function Home() {
                 height={700}
                 className="w-auto h-auto mx-auto"
                 priority="low"
-                alt=""
+                alt="Yes Chad Meme"
               />
             </div>
           </div>
@@ -302,7 +302,7 @@ export default function Home() {
             height={652}
             className="w-full h-auto rounded-2xl ring-1 ring-cyan-200"
             priority="low"
-            alt=""
+            alt="Yes Chad Chart"
           />
         </div>
         <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4">
