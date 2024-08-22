@@ -9,7 +9,10 @@ export default function Home() {
     <>
       <Head>
         <title>Yes Chad - $chad token on SOL</title>
-        <meta name="description" content="Yes Chad embodies internet culture's power to transform divisive elements into universal symbols of coolness and humor, evolving humanity's collective psyche one 'yes' at a time." />
+        <meta
+          name="description"
+          content="Yes Chad embodies internet culture's power to transform divisive elements into universal symbols of coolness and humor, evolving humanity's collective psyche one 'yes' at a time."
+        />
       </Head>
       <div className={`${font.className} bg-[#67D9FD] text-lg`}>
         <div className="bg-[#2B8CAD]">
@@ -271,9 +274,15 @@ export default function Home() {
           <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">
             CHART
           </h2>
-          <div id="dexscreener-embed">
-            <iframe src="https://dexscreener.com/solana/7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump?embed=1" loading="lazy"></iframe>
-          </div>
+          <iframe
+            width="100%"
+            height="600"
+            src="https://birdeye.so/tv-widget/7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump?chain=solana&viewMode=pair&chartInterval=240&chartType=CANDLE&chartTimezone=Etc%2FUTC&chartLeftToolbar=show&theme=light"
+            frameborder="0"
+            loading="lazy"
+            allowfullscreen
+            className="rounded-lg shadow-lg"
+          ></iframe>
         </div>
         <div className="bg-[#2B8CAD]">
           <div className="max-w-7xl mx-auto px-4 py-4 text-center font-semibold">
