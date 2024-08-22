@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>$chad - Yes Chad Token On Solana | solyeschad</title>
+        <title>$chad - Yes Chad Token On Solana | SolYesChad</title>
         <meta
           name="description"
           content="$chad - Yes Chad embodies internet culture's power to transform divisive elements into universal symbols of coolness and humor, evolving humanity's collective psyche one 'yes' at a time"
