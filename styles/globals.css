@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-#dexscreener-embed {
-  @apply relative rounded-lg w-full pb-[125%];
-}
-
-@media (min-width: 1400px) {
-  #dexscreener-embed {
-    @apply pb-[65%];
-  }
-}
-
-#dexscreener-embed iframe {
-  @apply absolute w-full h-[800px] max-h-full border-0 left-0 top-0 rounded-lg;
-}
-
 .shadow-solid-primary {
   box-shadow: 4px 4px var(--tw-shadow-color);
 }
