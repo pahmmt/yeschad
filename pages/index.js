@@ -237,7 +237,7 @@ export default function Home() {
             </div>
             <div className="bg-white px-4 py-8 rounded-2xl ring-1 ring-cyan-200">
               <h3 className="text-3xl font-semibold mb-4">Supply</h3>
-              <div className="font-semibold text-2xl">999,960,379.72</div>
+              <div className="font-semibold text-2xl">999M</div>
             </div>
           </div>
         </div>
