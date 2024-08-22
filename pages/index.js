@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Roboto_Condensed } from 'next/font/google'
@@ -5,6 +6,25 @@ import { Roboto_Condensed } from 'next/font/google'
 const font = Roboto_Condensed({ subsets: ['latin'] })
 
 export default function Home() {
+  const [buttonText, setButtonText] = useState('Copy')
+  const [isDisabled, setIsDisabled] = useState(false)
+  const contract_address = '7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump'
+  const handleCopy = () => {
+    navigator.clipboard
+      .writeText(contract_address)
+      .then(() => {
+        setButtonText('Copied!')
+        setIsDisabled(true)
+        setTimeout(() => {
+          setButtonText('Copy')
+          setIsDisabled(false)
+        }, 3000)
+      })
+      .catch((error) => {
+        console.error('Error copying text:', error)
+      })
+  }
+
   return (
     <>
       <Head>
@@ -180,13 +200,21 @@ export default function Home() {
           <div class="grid md:grid-cols-2 gap-4 text-center">
             <div className="bg-white px-4 py-8 rounded-xl shadow-lg">
               <h3 className="text-3xl font-semibold mb-4">Contract Address</h3>
-              <div>
+              <div class="flex items-center">
                 <input
                   type="text"
-                  value="7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump"
+                  value={contract_address}
                   className="w-full max-w-full border px-2 py-1 rounded-md text-center"
                   readOnly
                 />
+                <button
+                  type="button"
+                  className="ml-2 border px-2 py-1 rounded-md text-center"
+                  onClick={handleCopy}
+                  disabled={isDisabled}
+                >
+                  {buttonText}
+                </button>
               </div>
             </div>
             <div className="bg-white px-4 py-8 rounded-xl shadow-lg">
@@ -221,8 +249,8 @@ export default function Home() {
           />
         </div>
         <div className="max-w-7xl mx-auto mb-16 px-4">
-          <div class="grid md:grid-cols-2 gap-4">
-            <div className="bg-white px-4 md:px-8 py-8 rounded-xl shadow-lg">
+          <div class="grid md:grid-cols-2 gap-4 bg-white rounded-xl shadow-lg">
+            <div className="px-4 md:px-8 py-8">
               <div>
                 <h1 className="text-4xl md:text-6xl font-black mb-4 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-gray-300">
                   ORIGIN & EVOLUTION OF THE MEME
@@ -259,7 +287,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-white px-4 py-8 rounded-xl shadow-lg">
+            <div className="px-4 py-8">
               <Image
                 src="/cover-1.jpg"
                 width={864}
@@ -280,7 +308,7 @@ export default function Home() {
             src="https://birdeye.so/tv-widget/7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump?chain=solana&viewMode=pair&chartInterval=240&chartType=CANDLE&chartTimezone=Etc%2FUTC&chartLeftToolbar=show&theme=light"
             frameborder="0"
             loading="lazy"
-            allowfullscreen
+            allowFullScreen
             className="rounded-lg shadow-lg"
           ></iframe>
         </div>
