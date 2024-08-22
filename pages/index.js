@@ -57,14 +57,7 @@ export default function Home() {
               className="flex items-center bg-white px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
               target="_blank"
             >
-              BUY
-            </a>
-            <a
-              href="https://dexscreener.com/solana/7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump"
-              className="flex items-center bg-white px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
-              target="_blank"
-            >
-              CHART
+              BUY $CHAD
             </a>
           </div>
         </div>
