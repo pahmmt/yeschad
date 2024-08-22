@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Roboto_Condensed } from 'next/font/google'
+import { Oswald } from 'next/font/google'
 
-const font = Roboto_Condensed({ subsets: ['latin'] })
+const font = Oswald({ subsets: ['latin'] })
 
 export default function Home() {
   const [buttonText, setButtonText] = useState('Copy')
@@ -198,7 +198,7 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto mb-12 px-4">
           <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">
-            Chadonomics
+            Chadnomics
           </h2>
           <div class="grid md:grid-cols-2 gap-4 text-center">
             <div className="bg-white px-4 py-8 rounded-2xl ring-1 ring-cyan-200">
