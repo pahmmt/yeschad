@@ -93,11 +93,12 @@ export default function Home() {
                 Welcome, Chad
               </h1>
               <div className="text-xl leading-8 font-semibold mb-6">
-                <strong>Yes Chad</strong> has become an emblem of internet culture&#39;s ability
-                to take something potentially divisive, strip it of its original
-                context, and turn it into a universal symbol of internet
-                coolness and humor. It&#39;s like watching humanity&#39;s
-                collective psyche evolve in real-time, one &ldquo;yes&rdquo; at a time.
+                <strong>Yes Chad</strong> has become an emblem of internet
+                culture&#39;s ability to take something potentially divisive,
+                strip it of its original context, and turn it into a universal
+                symbol of internet coolness and humor. It&#39;s like watching
+                humanity&#39;s collective psyche evolve in real-time, one
+                &ldquo;yes&rdquo; at a time.
               </div>
               <div className="flex items-center space-x-6 justify-center md:justify-start">
                 <a
@@ -188,6 +189,7 @@ export default function Home() {
                 width={306}
                 height={320}
                 className="w-72 h-auto mx-auto"
+                priority="low"
                 alt=""
               />
             </div>
@@ -248,23 +250,25 @@ export default function Home() {
                 </h1>
                 <div className="text-xl leading-8 space-y-8">
                   <p>
-                    The &ldquo;<strong>Yes Chad</strong>&rdquo; or &ldquo;<strong>Nordic Gamer</strong>&rdquo; meme sprouted from the
+                    The &ldquo;<strong>Yes Chad</strong>&rdquo; or &ldquo;
+                    <strong>Nordic Gamer</strong>&rdquo; meme sprouted from the
                     fertile grounds of 4chan&#39;s /pol/ board, where it was
                     initially part of a meme comparing Nordic and Mediterranean
-                    archetypes. This character, with his stoic, &ldquo;yes&rdquo;-affirming
-                    demeanor, became a symbol of unbothered confidence. Born in
-                    August 2019, thanks to a tweet by @yachs_91, it quickly
-                    became an internet sensation, embodying hyper-masculine
-                    indifference or, in some cases, a satirical take on racial
-                    and cultural stereotypes.
+                    archetypes. This character, with his stoic,
+                    &ldquo;yes&rdquo;-affirming demeanor, became a symbol of
+                    unbothered confidence. Born in August 2019, thanks to a
+                    tweet by @yachs_91, it quickly became an internet sensation,
+                    embodying hyper-masculine indifference or, in some cases, a
+                    satirical take on racial and cultural stereotypes.
                   </p>
                   <p>
-                    Over time, <strong>Yes Chad</strong> transcended its controversial roots.
-                    It&#39;s now often used to represent a figure of calm in the
-                    storm of internet debates, a meme that says, &ldquo;I&#39;m above
-                    this fray.&rdquo; It&#39;s been adopted across various platforms
-                    for its simplicity and the humorous, often ironic,
-                    acknowledgment of life&#39;s absurdities.
+                    Over time, <strong>Yes Chad</strong> transcended its
+                    controversial roots. It&#39;s now often used to represent a
+                    figure of calm in the storm of internet debates, a meme that
+                    says, &ldquo;I&#39;m above this fray.&rdquo; It&#39;s been
+                    adopted across various platforms for its simplicity and the
+                    humorous, often ironic, acknowledgment of life&#39;s
+                    absurdities.
                   </p>
                   <p>
                     <a
@@ -284,6 +288,7 @@ export default function Home() {
                 width={605}
                 height={700}
                 className="w-auto h-auto mx-auto"
+                priority="low"
                 alt=""
               />
             </div>
@@ -295,6 +300,7 @@ export default function Home() {
             width={945}
             height={652}
             className="w-full h-auto rounded-2xl ring-1 ring-cyan-200"
+            priority="low"
             alt=""
           />
         </div>
