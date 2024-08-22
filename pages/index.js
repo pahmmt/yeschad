@@ -13,13 +13,13 @@ export default function Home() {
       </Head>
       <div className={`${font.className} bg-[#67D9FD] text-lg`}>
         <div className="bg-[#2B8CAD]">
-          <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4 py-2 flex items-center justify-between">
-            <div className="mb-4">
+          <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4 flex items-center justify-between">
+            <div>
               <Image
                 src="/chad.gif"
                 width={445}
                 height={480}
-                className="w-24 md:w-32 h-auto block mx-auto"
+                className="w-20 sm:w-28 md:w-32 h-auto block mx-auto"
                 alt=""
                 unoptimized
               />
@@ -27,7 +27,7 @@ export default function Home() {
             <div className="flex justify-center gap-4 font-semibold flex-wrap mb-4">
               <a
                 href="https://t.me/solyeschad"
-                className="flex items-center bg-amber-100 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                className="flex items-center bg-amber-100 px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                 target="_blank"
                 title="Telegram"
               >
@@ -41,7 +41,7 @@ export default function Home() {
               </a>
               <a
                 href="https://x.com/solyeschad"
-                className="flex items-center bg-amber-100 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                className="flex items-center bg-amber-100 px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                 target="_blank"
                 title="X"
               >
@@ -55,7 +55,7 @@ export default function Home() {
               </a>
               <a
                 href="https://jup.ag/swap/SOL-7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump"
-                className="flex items-center bg-amber-100 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                className="flex items-center bg-amber-100 px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                 target="_blank"
               >
                 BUY $CHAD
