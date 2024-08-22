@@ -28,10 +28,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Yes Chad - $chad Token On Solana</title>
+        <title>$chad - Yes Chad Token On Solana | solyeschad</title>
         <meta
           name="description"
-          content="Yes Chad embodies internet culture's power to transform divisive elements into universal symbols of coolness and humor, evolving humanity's collective psyche one 'yes' at a time."
+          content="$chad - Yes Chad embodies internet culture's power to transform divisive elements into universal symbols of coolness and humor, evolving humanity's collective psyche one 'yes' at a time"
         />
       </Head>
       <div className={`${font.className} bg-[#67D9FD] text-lg`}>
