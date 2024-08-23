@@ -93,7 +93,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4">
           <div class="grid md:grid-cols-2 gap-8">
             <div>
-              <h1 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black">
+              <h1 className="text-amber-100 text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black">
                 Welcome, Chad
               </h1>
               <div className="text-xl leading-8 font-semibold mb-6">
@@ -200,7 +200,7 @@ export default function Home() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto mb-12 px-4">
-          <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">
+          <h2 className="text-amber-100 text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">
             Chadnomics
           </h2>
           <div class="grid md:grid-cols-2 gap-4 text-center">
@@ -309,7 +309,7 @@ export default function Home() {
           />
         </div>
         <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4">
-          <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">
+          <h2 className="text-amber-100 text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">
             Chart
           </h2>
           <iframe
