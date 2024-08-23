@@ -31,7 +31,7 @@ export default function Home() {
         <title>$chad - Yes Chad Token On Solana</title>
         <meta
           name="description"
-          content="Yes Chad embodies internet culture's power to transform divisive elements into universal symbols of coolness and humor, evolving humanity's collective psyche one 'yes' at a time"
+          content="Yes Chad embodies internet culture's power to transform divisive elements into universal symbols of coolness and humor, evolving humanity's collective psyche one 'yes' at a time."
         />
         <meta
           name="google-site-verification"
