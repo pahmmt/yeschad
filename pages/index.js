@@ -47,7 +47,7 @@ export default function Home() {
                 width={320}
                 height={320}
                 className="w-16 sm:w-20 md:w-24 h-auto block mx-auto py-4"
-                alt="Yes Chad Figure"
+                alt="Yes Chad Logo"
                 unoptimized
               />
             </div>
@@ -194,7 +194,7 @@ export default function Home() {
                 height={480}
                 className="w-80 h-auto mx-auto"
                 priority="low"
-                alt="Yes Chad Portrait"
+                alt="Yes Chad GIF"
               />
             </div>
           </div>
