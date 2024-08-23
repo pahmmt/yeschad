@@ -40,10 +40,10 @@ export default function Home() {
           <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4 flex items-center justify-between">
             <div>
               <Image
-                src="/chad.gif"
-                width={200}
-                height={200}
-                className="w-20 sm:w-24 md:w-28 h-auto block mx-auto p-2"
+                src="/chad.png"
+                width={320}
+                height={320}
+                className="w-16 sm:w-20 md:w-24 h-auto block mx-auto py-4"
                 alt="Yes Chad Figure"
                 unoptimized
               />
@@ -186,10 +186,10 @@ export default function Home() {
             </div>
             <div>
               <Image
-                src="/chad.png"
-                width={306}
-                height={320}
-                className="w-72 h-auto mx-auto"
+                src="/chad.gif"
+                width={445}
+                height={480}
+                className="w-80 h-auto mx-auto"
                 priority="low"
                 alt="Yes Chad Portrait"
               />
