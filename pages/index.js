@@ -107,7 +107,7 @@ export default function Home() {
               <div className="flex items-center space-x-6 justify-center md:justify-start">
                 <a
                   href="https://birdeye.so/token/7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump?chain=solana"
-                  className="flex items-center bg-white hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                  className="flex items-center bg-amber-100 hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                   target="_blank"
                   title="Birdeye"
                 >
@@ -128,7 +128,7 @@ export default function Home() {
                 </a>
                 <a
                   href="#"
-                  className="flex items-center bg-white hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                  className="flex items-center bg-amber-100 hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                   target="_blank"
                   title="Coingecko"
                 >
@@ -150,7 +150,7 @@ export default function Home() {
                 </a>
                 <a
                   href="https://dexscreener.com/solana/fri5dhtacw7xkcu91pqtvwozgdmdvp8xinbkzcdrrcd9"
-                  className="flex items-center bg-white hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                  className="flex items-center bg-amber-100 hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                   target="_blank"
                   title="Dexscreener"
                 >
@@ -167,7 +167,7 @@ export default function Home() {
                 </a>
                 <a
                   href="https://www.dextools.io/app/en/solana/pair-explorer/FRi5dHtacw7xkcU91pqTvWoZgDMDvP8XinbkzCDRRCd9"
-                  className="flex items-center bg-white hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                  className="flex items-center bg-amber-100 hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
                   target="_blank"
                   title="Dextools"
                 >
@@ -277,7 +277,7 @@ export default function Home() {
                   <p>
                     <a
                       href="https://jup.ag/swap/SOL-7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump"
-                      className="bg-white hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 font-semibold shadow-solid-primary shadow-black"
+                      className="bg-amber-100 hover:bg-cyan-200 px-4 py-2 rounded-md outline outline-2 font-semibold shadow-solid-primary shadow-black"
                       target="_blank"
                     >
                       BUY $CHAD ON JUPITER SWAP
