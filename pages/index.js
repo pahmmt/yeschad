@@ -16,7 +16,9 @@ export default function Home() {
     googleSiteVerification,
     telegramUrl,
     twitterUrl,
-    contractAddress,
+    tokenAddress,
+    tokenSymbol,
+    tokenSupply,
     swapUrl,
     birdEyeUrl,
     coinGeckoUrl,
@@ -27,7 +29,7 @@ export default function Home() {
   const [isDisabled, setIsDisabled] = useState(false)
   const handleCopy = () => {
     navigator.clipboard
-      .writeText(contractAddress)
+      .writeText(tokenAddress)
       .then(() => {
         setButtonText('Copied!')
         setIsDisabled(true)
@@ -180,7 +182,7 @@ export default function Home() {
               <div class="flex items-center">
                 <input
                   type="text"
-                  value={contractAddress}
+                  value={tokenAddress}
                   className="h-10 flex items-center w-full max-w-full border px-2 py-1 rounded-md text-center focus:outline-none"
                   readOnly
                 />
@@ -196,7 +198,7 @@ export default function Home() {
             </div>
             <div className="bg-white px-4 py-8 rounded-2xl ring-1 ring-cyan-200">
               <h3 className="text-3xl font-semibold mb-4">Symbol</h3>
-              <div className="font-semibold text-2xl">$chad</div>
+              <div className="font-semibold text-2xl">{tokenSymbol}</div>
             </div>
             <div className="bg-white px-4 py-8 rounded-xl ring-1 ring-cyan-200">
               <h3 className="text-3xl font-semibold mb-4">Network</h3>
@@ -206,7 +208,7 @@ export default function Home() {
             </div>
             <div className="bg-white px-4 py-8 rounded-2xl ring-1 ring-cyan-200">
               <h3 className="text-3xl font-semibold mb-4">Supply</h3>
-              <div className="font-semibold text-2xl">999M</div>
+              <div className="font-semibold text-2xl">{tokenSupply}</div>
             </div>
           </div>
         </div>

@@ -10,7 +10,9 @@ const config = {
   telegramUrl: 'https://t.me/solyeschad',
   twitterUrl: 'https://x.com/solyeschad',
   // Token info
-  contractAddress: '7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump',
+  tokenAddress: '7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump',
+  tokenSymbol: '$chad',
+  tokenSupply: '999M',
   swapUrl: 'https://jup.ag/swap/SOL-7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump',
   birdEyeUrl: 'https://birdeye.so/token/7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump?chain=solana',
   coinGeckoUrl: '#',
