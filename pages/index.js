@@ -46,7 +46,7 @@ export default function Home() {
         <div className="bg-[#2B8CAD]">
           <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4 flex items-center justify-between">
             <div>
-              <Image src="/chad.png" width={320} height={320} className="w-16 sm:w-20 md:w-24 h-auto block mx-auto py-4" alt="Yes Chad Logo" unoptimized />
+              <Image src="/chad.png" width={320} height={320} className="w-16 sm:w-20 md:w-24 h-auto block mx-auto py-4" alt="Yes Chad Logo" />
             </div>
             <div className="flex justify-center gap-4 font-semibold flex-wrap mb-4">
               <a
