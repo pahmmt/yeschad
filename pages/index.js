@@ -8,7 +8,7 @@ import ChadImage from '../components/ChadImage'
 const font = Oswald({ subsets: ['latin'] })
 
 export default function Home() {
-  const { title, description, author, keywords, url, ogImage, googleSiteVerification } = config
+  const { title, description, url, ogImage, googleSiteVerification } = config
   const [buttonText, setButtonText] = useState('Copy')
   const [isDisabled, setIsDisabled] = useState(false)
   const contract_address = '7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump'
