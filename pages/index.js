@@ -8,8 +8,21 @@ import ChadImage from '@/components/ChadImage'
 const font = Oswald({ subsets: ['latin'] })
 
 export default function Home() {
-  const { title, description, url, ogImage, googleSiteVerification, telegramUrl, twitterUrl, contractAddress, swapUrl, birdEyeUrl, coinGeckoUrl, dexScreenerUrl, dexToolsUrl } =
-    config
+  const {
+    title,
+    description,
+    url,
+    ogImage,
+    googleSiteVerification,
+    telegramUrl,
+    twitterUrl,
+    contractAddress,
+    swapUrl,
+    birdEyeUrl,
+    coinGeckoUrl,
+    dexScreenerUrl,
+    dexToolsUrl,
+  } = config
   const [buttonText, setButtonText] = useState('Copy')
   const [isDisabled, setIsDisabled] = useState(false)
   const handleCopy = () => {
@@ -82,11 +95,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4">
           <div class="grid md:grid-cols-2 gap-8">
             <div>
-              <h1 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black">Welcome, Chad</h1>
+              <h1 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black">
+                Welcome, Chad
+              </h1>
               <div className="text-xl leading-8 font-semibold mb-6">
-                <strong>Yes Chad</strong> has become an emblem of internet culture&#39;s ability to take something potentially divisive, strip it of its original context, and turn
-                it into a universal symbol of internet coolness and humor. It&#39;s like watching humanity&#39;s collective psyche evolve in real-time, one &ldquo;yes&rdquo; at a
-                time.
+                <strong>Yes Chad</strong> has become an emblem of internet culture&#39;s ability to take something potentially divisive, strip it of
+                its original context, and turn it into a universal symbol of internet coolness and humor. It&#39;s like watching humanity&#39;s
+                collective psyche evolve in real-time, one &ldquo;yes&rdquo; at a time.
               </div>
               <div className="flex items-center space-x-6 justify-center md:justify-start">
                 <a
@@ -156,7 +171,9 @@ export default function Home() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto mb-12 px-4">
-          <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">Chadnomics</h2>
+          <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">
+            Chadnomics
+          </h2>
           <div class="grid md:grid-cols-2 gap-4 text-center">
             <div className="bg-white px-4 py-8 rounded-2xl ring-1 ring-cyan-200">
               <h3 className="text-3xl font-semibold mb-4">Contract Address</h3>
@@ -197,19 +214,21 @@ export default function Home() {
           <div class="grid md:grid-cols-2 gap-4 bg-white rounded-2xl ring-1 ring-cyan-200">
             <div className="px-4 md:px-8 py-8">
               <div>
-                <h1 className="text-4xl md:text-6xl font-black mb-4 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-gray-300">ORIGIN & EVOLUTION OF THE MEME</h1>
+                <h1 className="text-4xl md:text-6xl font-black mb-4 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-gray-300">
+                  ORIGIN & EVOLUTION OF THE MEME
+                </h1>
                 <div className="text-xl leading-8 space-y-8">
                   <p>
                     The &ldquo;<strong>Yes Chad</strong>&rdquo; or &ldquo;
-                    <strong>Nordic Gamer</strong>&rdquo; meme sprouted from the fertile grounds of 4chan&#39;s /pol/ board, where it was initially part of a meme comparing Nordic
-                    and Mediterranean archetypes. This character, with his stoic, &ldquo;yes&rdquo;-affirming demeanor, became a symbol of unbothered confidence. Born in August
-                    2019, thanks to a tweet by @yachs_91, it quickly became an internet sensation, embodying hyper-masculine indifference or, in some cases, a satirical take on
-                    racial and cultural stereotypes.
+                    <strong>Nordic Gamer</strong>&rdquo; meme sprouted from the fertile grounds of 4chan&#39;s /pol/ board, where it was initially
+                    part of a meme comparing Nordic and Mediterranean archetypes. This character, with his stoic, &ldquo;yes&rdquo;-affirming
+                    demeanor, became a symbol of unbothered confidence. Born in August 2019, thanks to a tweet by @yachs_91, it quickly became an
+                    internet sensation, embodying hyper-masculine indifference or, in some cases, a satirical take on racial and cultural stereotypes.
                   </p>
                   <p>
-                    Over time, <strong>Yes Chad</strong> transcended its controversial roots. It&#39;s now often used to represent a figure of calm in the storm of internet
-                    debates, a meme that says, &ldquo;I&#39;m above this fray.&rdquo; It&#39;s been adopted across various platforms for its simplicity and the humorous, often
-                    ironic, acknowledgment of life&#39;s absurdities.
+                    Over time, <strong>Yes Chad</strong> transcended its controversial roots. It&#39;s now often used to represent a figure of calm in
+                    the storm of internet debates, a meme that says, &ldquo;I&#39;m above this fray.&rdquo; It&#39;s been adopted across various
+                    platforms for its simplicity and the humorous, often ironic, acknowledgment of life&#39;s absurdities.
                   </p>
                   <p>
                     <a
@@ -229,10 +248,19 @@ export default function Home() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto mb-16 px-4">
-          <Image src="/cover-0.jpg" width={945} height={652} className="w-full h-auto rounded-2xl ring-1 ring-cyan-200" priority="low" alt="Yes Chad Chart" />
+          <Image
+            src="/cover-0.jpg"
+            width={945}
+            height={652}
+            className="w-full h-auto rounded-2xl ring-1 ring-cyan-200"
+            priority="low"
+            alt="Yes Chad Chart"
+          />
         </div>
         <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4">
-          <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">Chart</h2>
+          <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">
+            Chart
+          </h2>
           <iframe
             width="100%"
             height="600"
