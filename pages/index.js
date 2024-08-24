@@ -35,7 +35,7 @@ export default function Home() {
         />
         <meta
           name="google-site-verification"
-          content="LoZx1B_yMkMQuUf9NO-kgFckVbQbgx1H-cz4Xz3g1JI"
+          content="_OnLsmpDxrDhS4ZYp4Z7R3qSR_fgvx8YWN24BghGJdo"
         />
       </Head>
       <div className={`${font.className} bg-[#67D9FD] text-lg`}>
