@@ -1,5 +1,5 @@
-// config.js
 const config = {
+  // Site info
   title: '$chad - Yes Chad Token On Solana',
   description:
     "Yes Chad embodies internet culture's power to transform divisive elements into universal symbols of coolness and humor, evolving humanity's collective psyche one “yes” at a time.",
