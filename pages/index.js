@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Oswald } from 'next/font/google'
 import config from '../config/config'
-
 import ChadImage from '../components/ChadImage'
 
 const font = Oswald({ subsets: ['latin'] })
