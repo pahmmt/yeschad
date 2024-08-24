@@ -14,7 +14,7 @@ export default function Home() {
   const [isDisabled, setIsDisabled] = useState(false)
   const handleCopy = () => {
     navigator.clipboard
-      .writeText(contract_address)
+      .writeText(contractAddress)
       .then(() => {
         setButtonText('Copied!')
         setIsDisabled(true)
@@ -163,7 +163,7 @@ export default function Home() {
               <div class="flex items-center">
                 <input
                   type="text"
-                  value={contract_address}
+                  value={contractAddress}
                   className="h-10 flex items-center w-full max-w-full border px-2 py-1 rounded-md text-center focus:outline-none"
                   readOnly
                 />
