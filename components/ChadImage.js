@@ -23,10 +23,10 @@ export default function Chad() {
   )
   const [index, setIndex] = useState(0)
   const handleNext = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % images.length)
+    setIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
   }
   const handlePrev = () => {
-    setIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
+    setIndex((prevIndex) => (prevIndex + 1) % images.length)
   }
 
   return (
