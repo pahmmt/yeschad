@@ -59,11 +59,11 @@ export default function Home() {
       <div className={`${font.className} bg-[#67D9FD] text-lg`}>
         <div className="bg-[#2B8CAD]">
           <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4 flex items-center justify-between">
-            <Image src="/logo.png" width={256} height={256} className="w-10 sm:w-14 md:w-16 h-auto block py-4" alt="Yes Chad Logo" />
+            <Image src="/logo.png" width={256} height={256} className="w-14 md:w-16 h-auto block py-4" alt="Yes Chad Logo" />
             <div className="flex justify-center gap-4 font-semibold flex-wrap mb-4">
               <a
                 href={telegramUrl}
-                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black -mb-1"
                 target="_blank"
                 title="Telegram"
               >
@@ -73,7 +73,7 @@ export default function Home() {
               </a>
               <a
                 href={twitterUrl}
-                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black -mb-1"
                 target="_blank"
                 title="X"
               >
@@ -83,7 +83,7 @@ export default function Home() {
               </a>
               <a
                 href={swapUrl}
-                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black -mb-1"
                 target="_blank"
               >
                 BUY $CHAD
