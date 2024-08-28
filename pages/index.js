@@ -59,7 +59,7 @@ export default function Home() {
       <div className={`${font.className} bg-[#67D9FD] text-lg`}>
         <div className="bg-[#2B8CAD]">
           <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4 flex items-center justify-between">
-            <Image src="/logo.png" width={512} height={512} className="w-10 sm:w-14 md:w-16 h-auto block py-4" alt="Yes Chad Logo" />
+            <Image src="/logo.png" width={256} height={256} className="w-10 sm:w-14 md:w-16 h-auto block py-4" alt="Yes Chad Logo" />
             <div className="flex justify-center gap-4 font-semibold flex-wrap mb-4">
               <a
                 href={telegramUrl}
