@@ -63,7 +63,7 @@ export default function Home() {
             <div className="flex justify-center gap-4 font-semibold flex-wrap">
               <a
                 href={telegramUrl}
-                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
                 target="_blank"
                 title="Telegram"
               >
@@ -73,7 +73,7 @@ export default function Home() {
               </a>
               <a
                 href={twitterUrl}
-                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
                 target="_blank"
                 title="X"
               >
@@ -83,7 +83,7 @@ export default function Home() {
               </a>
               <a
                 href={swapUrl}
-                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
                 target="_blank"
               >
                 BUY $CHAD
@@ -105,7 +105,7 @@ export default function Home() {
               <div className="flex items-center space-x-6 justify-center md:justify-start">
                 <a
                   href={birdEyeUrl}
-                  className="flex items-center bg-amber-100 hover:bg-white px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                  className="flex items-center bg-amber-100 hover:bg-white px-4 py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
                   target="_blank"
                   title="Birdeye"
                 >
@@ -122,7 +122,7 @@ export default function Home() {
                 </a>
                 <a
                   href={coinGeckoUrl}
-                  className="flex items-center bg-amber-100 hover:bg-white px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                  className="flex items-center bg-amber-100 hover:bg-white px-4 py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
                   target="_blank"
                   title="Coingecko"
                 >
@@ -140,7 +140,7 @@ export default function Home() {
                 </a>
                 <a
                   href={dexScreenerUrl}
-                  className="flex items-center bg-amber-100 hover:bg-white px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                  className="flex items-center bg-amber-100 hover:bg-white px-4 py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
                   target="_blank"
                   title="Dexscreener"
                 >
@@ -151,7 +151,7 @@ export default function Home() {
                 </a>
                 <a
                   href={dexToolsUrl}
-                  className="flex items-center bg-amber-100 hover:bg-white px-4 py-2 rounded-md outline outline-2 shadow-solid-primary shadow-black"
+                  className="flex items-center bg-amber-100 hover:bg-white px-4 py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
                   target="_blank"
                   title="Dextools"
                 >
@@ -174,18 +174,18 @@ export default function Home() {
             Chadnomics
           </h2>
           <div class="grid md:grid-cols-2 gap-4 text-center">
-            <div className="bg-white px-4 py-8 rounded-2xl ring-1 ring-cyan-200">
+            <div className="bg-white px-4 py-8 rounded-2xl border-2 border-black">
               <h3 className="text-3xl font-semibold mb-4">Contract Address</h3>
               <div class="flex items-center">
                 <input
                   type="text"
                   value={tokenAddress}
-                  className="h-10 flex items-center w-full max-w-full border px-2 py-1 rounded-md text-center focus:outline-none"
+                  className="h-10 flex items-center w-full max-w-full border-2 border-black px-2 py-1 rounded-md text-center focus:outline-none"
                   readOnly
                 />
                 <button
                   type="button"
-                  className="h-10 flex items-center ml-2 px-2 py-1 rounded-md bg-white border-2 text-center"
+                  className="h-10 flex items-center ml-2 px-2 py-1 rounded-md bg-white  border-2 border-black text-center"
                   onClick={handleCopy}
                   disabled={isDisabled}
                 >
@@ -193,24 +193,24 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className="bg-white px-4 py-8 rounded-2xl ring-1 ring-cyan-200">
+            <div className="bg-white px-4 py-8 rounded-2xl border-2 border-black">
               <h3 className="text-3xl font-semibold mb-4">Symbol</h3>
               <div className="font-semibold text-2xl">{tokenSymbol}</div>
             </div>
-            <div className="bg-white px-4 py-8 rounded-xl ring-1 ring-cyan-200">
+            <div className="bg-white px-4 py-8 rounded-xl border-2 border-black">
               <h3 className="text-3xl font-semibold mb-4">Network</h3>
               <div>
                 <Image src="/solana.png" width={100} height={100} className="size-12 mx-auto" alt="" />
               </div>
             </div>
-            <div className="bg-white px-4 py-8 rounded-2xl ring-1 ring-cyan-200">
+            <div className="bg-white px-4 py-8 rounded-2xl border-2 border-black">
               <h3 className="text-3xl font-semibold mb-4">Supply</h3>
               <div className="font-semibold text-2xl">{tokenSupply}</div>
             </div>
           </div>
         </div>
         <div className="max-w-7xl mx-auto mb-12 px-4">
-          <div class="grid md:grid-cols-2 gap-4 bg-white rounded-2xl ring-1 ring-cyan-200">
+          <div class="grid md:grid-cols-2 gap-4 bg-white rounded-2xl border-2 border-black">
             <div className="px-4 md:px-8 py-8">
               <div>
                 <h1 className="text-4xl md:text-6xl font-black mb-4 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-gray-300">
@@ -232,7 +232,7 @@ export default function Home() {
                   <p>
                     <a
                       href={swapUrl}
-                      className="bg-amber-100 hover:bg-white px-4 py-2 rounded-md outline outline-2 font-semibold shadow-solid-primary shadow-black"
+                      className="bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
                       target="_blank"
                     >
                       BUY $CHAD ON JUPITER SWAP
@@ -246,16 +246,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mb-16 px-4">
-          <Image
-            src="/cover-0.jpg"
-            width={945}
-            height={652}
-            className="w-full h-auto rounded-2xl ring-1 ring-cyan-200"
-            priority="low"
-            alt="Yes Chad Chart"
-          />
-        </div>
         <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4">
           <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">
             Chart
@@ -266,7 +256,7 @@ export default function Home() {
             src="https://birdeye.so/tv-widget/7rdeLkyfmxujFthUNYZM7jWGEKZnT9mkeSGG1c9hpump?chain=solana&viewMode=pair&chartInterval=240&chartType=CANDLE&chartTimezone=Etc%2FUTC&chartLeftToolbar=show&theme=light"
             loading="lazy"
             allowFullScreen
-            className="rounded-2xl ring-1 ring-cyan-200"
+            className="rounded-2xl border-2 border-black"
           ></iframe>
         </div>
         <div className="bg-[#2B8CAD]">
