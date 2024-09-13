@@ -1,29 +1,22 @@
-import React, { useState } from 'react'
+import dynamic from 'next/dynamic'
+import { Oswald } from 'next/font/google'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Oswald } from 'next/font/google'
+
+import React, { useState } from 'react'
+
 import config from '@/config/config'
 
 const font = Oswald({ subsets: ['latin'] })
 
+// Tắt SSR cho MemeGenerator
+const MemeGenerator = dynamic(() => import('@/components/MemeGenerator'), {
+  ssr: false,
+})
+
 export default function Home() {
-  const {
-    title,
-    description,
-    url,
-    ogImage,
-    googleSiteVerification,
-    telegramUrl,
-    twitterUrl,
-    tokenAddress,
-    tokenSymbol,
-    tokenSupply,
-    swapUrl,
-    birdEyeUrl,
-    coinGeckoUrl,
-    dexScreenerUrl,
-    dexToolsUrl,
-  } = config
+  const { title, description, url, ogImage, googleSiteVerification, telegramUrl, twitterUrl, tokenAddress, tokenSymbol, tokenSupply, swapUrl, birdEyeUrl, coinGeckoUrl, dexScreenerUrl, dexToolsUrl } =
+    config
   const [buttonText, setButtonText] = useState('Copy')
   const [isDisabled, setIsDisabled] = useState(false)
   const handleCopy = () => {
@@ -55,52 +48,64 @@ export default function Home() {
         {url && <meta property="og:url" content={url} />}
         {/* Google Site Verification */}
         {googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />}
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#67D9FD" />
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+        <meta name="theme-color" content="#67D9FD" />
       </Head>
       <div className={`${font.className} bg-[#67D9FD] text-lg`}>
-        <div className="bg-[#2B8CAD]">
-          <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4 flex items-center justify-between">
-            <Image src="/logo.png" width={256} height={256} className="w-14 md:w-16 h-auto block py-4" alt="Yes Chad Logo" />
-            <div className="flex justify-center gap-4 font-semibold flex-wrap">
-              <a
-                href={telegramUrl}
-                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
-                target="_blank"
-                title="Telegram"
-              >
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="size-5" fill="currentColor">
-                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-                </svg>
-              </a>
-              <a
-                href={twitterUrl}
-                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
-                target="_blank"
-                title="X"
-              >
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="size-5" fill="currentColor">
-                  <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
-                </svg>
-              </a>
-              <a
-                href={swapUrl}
-                className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
-                target="_blank"
-              >
-                BUY $CHAD
-              </a>
-            </div>
+        <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4 flex items-center justify-between">
+          <Image src="/chad.png" width={256} height={256} className="w-14 md:w-16 h-auto block py-4" alt="Yes Chad Logo" />
+          <div className="flex justify-center gap-4 font-semibold flex-wrap">
+            <a
+              href={telegramUrl}
+              className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
+              target="_blank"
+              title="Telegram"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="size-5" fill="currentColor">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+              </svg>
+            </a>
+            <a
+              href={twitterUrl}
+              className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
+              target="_blank"
+              title="X"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="size-5" fill="currentColor">
+                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+              </svg>
+            </a>
+            <a
+              href={swapUrl}
+              className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
+              target="_blank"
+            >
+              BUY $CHAD
+            </a>
           </div>
         </div>
         <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4">
           <div class="grid md:grid-cols-2 gap-8">
             <div>
-              <h1 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black">
-                Welcome, Chad
-              </h1>
+              <h1 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black">Welcome, Chad</h1>
               <div className="text-xl leading-8 font-semibold mb-6">
-                <strong>Yes Chad</strong> has become an emblem of internet culture&#39;s ability to take something potentially divisive, strip it of
-                its original context, and turn it into a universal symbol of internet coolness and humor. It&#39;s like watching humanity&#39;s
-                collective psyche evolve in real-time, one &ldquo;yes&rdquo; at a time.
+                <strong>Yes Chad</strong> has become an emblem of internet culture&#39;s ability to take something potentially divisive, strip it of its original context, and turn it into a universal
+                symbol of internet coolness and humor. It&#39;s like watching humanity&#39;s collective psyche evolve in real-time, one &ldquo;yes&rdquo; at a time.
               </div>
               <div className="flex items-center space-x-6 justify-center md:justify-start">
                 <a
@@ -114,10 +119,7 @@ export default function Home() {
                       d="M70.468 32.42c-4.737-2.858-6.792-10.035-4.704-14.917C67.409 13.657 73.334 0 73.334 0H52.782L7 91.666s12.838-8.655 31.786-.353c5.926 2.6 12.164 5.058 19.19 4.64C74.514 94.966 87.738 82.2 89.24 65.684c1.333-14.572-6.929-26.126-18.763-33.271l-.009.008Zm5.444 32.197c-.931 9.41-8.543 17.02-17.953 17.944-12.717 1.26-23.291-9.322-22.047-22.047.931-9.41 8.543-17.022 17.953-17.953 12.726-1.252 23.308 9.33 22.047 22.056Z"
                       fill="#000"
                     />
-                    <path
-                      d="M65.418 63.534c-.442 4.472-4.063 8.093-8.535 8.526-6.046.602-11.072-4.432-10.478-10.477.442-4.472 4.063-8.094 8.535-8.535a9.553 9.553 0 0 1 10.478 10.486Z"
-                      fill="#000"
-                    />
+                    <path d="M65.418 63.534c-.442 4.472-4.063 8.093-8.535 8.526-6.046.602-11.072-4.432-10.478-10.477.442-4.472 4.063-8.094 8.535-8.535a9.553 9.553 0 0 1 10.478 10.486Z" fill="#000" />
                   </svg>
                 </a>
                 <a
@@ -127,7 +129,7 @@ export default function Home() {
                   title="Coingecko"
                 >
                   <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" className="size-7">
-                    <g clip-path="url(#a)" fill="#000">
+                    <g clipPath="url(#a)" fill="#000">
                       <path d="M48.121 0C21.801.12.561 21.706.677 48.216c.12 26.51 21.555 47.9 47.872 47.783 26.321-.12 47.56-21.705 47.444-48.211C95.873 21.275 74.442-.117 48.121 0Zm-6.035 45.647c-4.706 0-8.522-3.84-8.522-8.58s3.816-8.58 8.522-8.58 8.52 3.843 8.52 8.58c0 4.736-3.817 8.58-8.52 8.58Zm6.796 9.276.043-.054.046-.053c2.431 1.578 5.208 2.137 7.981 2.217 2.777.074 5.606-.137 8.39-.702a45.678 45.678 0 0 0 8.153-2.54c1.481-.615 2.956-1.287 4.361-2.076l.027-.017a52.654 52.654 0 0 0 2.564-1.663c.182-.13.358-.267.531-.408l.02.024.073.087c-2.142 1.963-4.693 3.422-7.29 4.71a46.42 46.42 0 0 1-8.187 3c-2.816.733-5.756 1.288-8.732 1.014-2.929-.261-6.014-1.295-7.987-3.536l.007-.004Zm21.867-9.276a1.858 1.858 0 0 1 1.836-1.87 1.856 1.856 0 0 1 1.857 1.85 1.856 1.856 0 0 1-1.837 1.87 1.86 1.86 0 0 1-1.856-1.85ZM56.152 91.684c-1.84-12.988 9.422-25.71 15.772-32.219 1.442-1.475 3.67-3.509 5.743-5.67 8.243-7.764 9.884-17.04-6.988-21.675-3.198-.934-6.513-2.255-9.87-3.59a7.013 7.013 0 0 0-.366-.883c-.386-.669-1.06-1.438-2.08-2.311-2.191-1.917-6.313-1.867-9.87-1.017-3.932-.933-7.812-1.265-11.541-.365-16.318 4.53-18.941 12.544-19.576 22.201-.863 10.437-1.368 18.214-5.29 27.098-4.896-7.111-7.782-15.738-7.822-25.047-.11-24.513 19.532-44.472 43.87-44.583C72.472 3.513 92.29 23.295 92.4 47.808c.1 21.893-15.564 40.16-36.252 43.883l.004-.007Z" />
                       <path d="M48.078 37.144c0 3.335-2.684 6.034-5.992 6.034s-5.995-2.7-5.995-6.034c0-3.335 2.684-6.035 5.995-6.035s5.992 2.7 5.992 6.035Z" />
                     </g>
@@ -166,29 +168,17 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <Image src="/chad.png" width={512} height={512} alt="Yes. Chad" className="w-80 h-auto mx-auto block" />
+            <Image src="/chad.gif" width={445} height={480} alt="Yes. Chad" className="w-80 h-auto mx-auto block" />
           </div>
         </div>
         <div className="max-w-7xl mx-auto mb-12 px-4">
-          <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">
-            Chadnomics
-          </h2>
+          <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">Chadnomics</h2>
           <div class="grid md:grid-cols-2 gap-4 text-center">
             <div className="bg-white px-4 py-8 rounded-2xl border-2 border-black">
               <h3 className="text-3xl font-semibold mb-4">Contract Address</h3>
               <div class="flex items-center">
-                <input
-                  type="text"
-                  value={tokenAddress}
-                  className="h-10 flex items-center w-full max-w-full border-2 border-black px-2 py-1 rounded-md text-center focus:outline-none"
-                  readOnly
-                />
-                <button
-                  type="button"
-                  className="h-10 flex items-center ml-2 px-2 py-1 rounded-md bg-white  border-2 border-black text-center"
-                  onClick={handleCopy}
-                  disabled={isDisabled}
-                >
+                <input type="text" value={tokenAddress} className="h-10 flex items-center w-full max-w-full border-2 border-black px-2 py-1 rounded-md text-center focus:outline-none" readOnly />
+                <button type="button" className="h-10 flex items-center ml-2 px-2 py-1 rounded-md bg-white  border-2 border-black text-center" onClick={handleCopy} disabled={isDisabled}>
                   {buttonText}
                 </button>
               </div>
@@ -213,21 +203,17 @@ export default function Home() {
           <div class="grid md:grid-cols-2 gap-4 bg-white rounded-2xl border-2 border-black">
             <div className="px-4 md:px-8 py-8">
               <div>
-                <h1 className="text-4xl md:text-6xl font-black mb-4 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-gray-300">
-                  ORIGIN & EVOLUTION OF THE MEME
-                </h1>
+                <h1 className="text-4xl md:text-6xl font-black mb-4 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-gray-300">ORIGIN & EVOLUTION OF THE MEME</h1>
                 <div className="text-xl leading-8 space-y-8">
                   <p>
                     The &ldquo;<strong>Yes Chad</strong>&rdquo; or &ldquo;
-                    <strong>Nordic Gamer</strong>&rdquo; meme sprouted from the fertile grounds of 4chan&#39;s /pol/ board, where it was initially
-                    part of a meme comparing Nordic and Mediterranean archetypes. This character, with his stoic, &ldquo;yes&rdquo;-affirming
-                    demeanor, became a symbol of unbothered confidence. Born in August 2019, thanks to a tweet by @yachs_91, it quickly became an
-                    internet sensation, embodying hyper-masculine indifference or, in some cases, a satirical take on racial and cultural stereotypes.
+                    <strong>Nordic Gamer</strong>&rdquo; meme sprouted from the fertile grounds of 4chan&#39;s /pol/ board, where it was initially part of a meme comparing Nordic and Mediterranean
+                    archetypes. This character, with his stoic, &ldquo;yes&rdquo;-affirming demeanor, became a symbol of unbothered confidence. Born in August 2019, thanks to a tweet by @yachs_91, it
+                    quickly became an internet sensation, embodying hyper-masculine indifference or, in some cases, a satirical take on racial and cultural stereotypes.
                   </p>
                   <p>
-                    Over time, <strong>Yes Chad</strong> transcended its controversial roots. It&#39;s now often used to represent a figure of calm in
-                    the storm of internet debates, a meme that says, &ldquo;I&#39;m above this fray.&rdquo; It&#39;s been adopted across various
-                    platforms for its simplicity and the humorous, often ironic, acknowledgment of life&#39;s absurdities.
+                    Over time, <strong>Yes Chad</strong> transcended its controversial roots. It&#39;s now often used to represent a figure of calm in the storm of internet debates, a meme that says,
+                    &ldquo;I&#39;m above this fray.&rdquo; It&#39;s been adopted across various platforms for its simplicity and the humorous, often ironic, acknowledgment of life&#39;s absurdities.
                   </p>
                   <p>
                     <a
@@ -246,10 +232,12 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="max-w-7xl mx-auto mb-12 px-4">
+          <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">Meme Generator</h2>
+          <MemeGenerator className="rounded-2xl border-2 border-black bg-white" />
+        </div>
         <div className="max-w-7xl mx-auto mb-16 md:mb-24 px-4">
-          <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">
-            Chart
-          </h2>
+          <h2 className="text-white text-4xl md:text-7xl font-black mb-6 [text-shadow:_2px_4px_0_var(--tw-shadow-color)] shadow-black text-center">Chart</h2>
           <iframe
             width="100%"
             height="600"
@@ -259,7 +247,7 @@ export default function Home() {
             className="rounded-2xl border-2 border-black"
           ></iframe>
         </div>
-        <div className="bg-[#2B8CAD]">
+        <div>
           <div className="max-w-7xl mx-auto px-4 py-4 text-center font-semibold">Copyright © 2024 Yes Chad</div>
         </div>
       </div>
