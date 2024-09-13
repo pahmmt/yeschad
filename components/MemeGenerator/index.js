@@ -75,8 +75,22 @@ const MemeGenerator = ({ className }) => {
               nextEl: '.swiper-next',
               prevEl: '.swiper-prev',
             }}
-            spaceBetween={30}
+            spaceBetween={10}
             slidesPerView={4}
+            breakpoints={{
+              320: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              480: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+              },
+            }}
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
           >
