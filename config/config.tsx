@@ -15,7 +15,8 @@ const config: {
   }>
 } = {
   title: '$chad - Yes Chad Token On Solana',
-  description: "Yes Chad embodies internet culture's power to transform divisive elements into universal symbols of coolness and humor, evolving humanity's collective psyche one “yes” at a time.",
+  description:
+    "Yes Chad embodies internet culture's power to transform divisive elements into universal symbols of coolness and humor, evolving humanity's collective psyche one “yes” at a time.",
   url: 'https://solyeschad.com',
   ogImage: '',
   googleSiteVerification: '_OnLsmpDxrDhS4ZYp4Z7R3qSR_fgvx8YWN24BghGJdo',
@@ -67,7 +68,10 @@ const config: {
             d="M70.468 32.42c-4.737-2.858-6.792-10.035-4.704-14.917C67.409 13.657 73.334 0 73.334 0H52.782L7 91.666s12.838-8.655 31.786-.353c5.926 2.6 12.164 5.058 19.19 4.64C74.514 94.966 87.738 82.2 89.24 65.684c1.333-14.572-6.929-26.126-18.763-33.271l-.009.008Zm5.444 32.197c-.931 9.41-8.543 17.02-17.953 17.944-12.717 1.26-23.291-9.322-22.047-22.047.931-9.41 8.543-17.022 17.953-17.953 12.726-1.252 23.308 9.33 22.047 22.056Z"
             fill="#000"
           />
-          <path d="M65.418 63.534c-.442 4.472-4.063 8.093-8.535 8.526-6.046.602-11.072-4.432-10.478-10.477.442-4.472 4.063-8.094 8.535-8.535a9.553 9.553 0 0 1 10.478 10.486Z" fill="#000" />
+          <path
+            d="M65.418 63.534c-.442 4.472-4.063 8.093-8.535 8.526-6.046.602-11.072-4.432-10.478-10.477.442-4.472 4.063-8.094 8.535-8.535a9.553 9.553 0 0 1 10.478 10.486Z"
+            fill="#000"
+          />
         </svg>
       ),
     },

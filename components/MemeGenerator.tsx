@@ -37,7 +37,16 @@ const MemeGenerator = ({ className }: MemeProps) => {
     const fabric = fabricRef.current
 
     if (container && fabric) {
-      const { paddingLeft, paddingRight, paddingTop, paddingBottom, borderLeftWidth, borderRightWidth, borderTopWidth, borderBottomWidth } = getComputedStyle(container)
+      const {
+        paddingLeft,
+        paddingRight,
+        paddingTop,
+        paddingBottom,
+        borderLeftWidth,
+        borderRightWidth,
+        borderTopWidth,
+        borderBottomWidth,
+      } = getComputedStyle(container)
       const paddingX = parseFloat(paddingLeft) + parseFloat(paddingRight)
       const paddingY = parseFloat(paddingTop) + parseFloat(paddingBottom)
       const borderX = parseFloat(borderLeftWidth) + parseFloat(borderRightWidth)
@@ -132,7 +141,10 @@ const MemeGenerator = ({ className }: MemeProps) => {
       {/* Tools Column */}
       <div className="space-y-4">
         {/* Upload background */}
-        <div {...getRootProps()} className="upload-area md:mb-8 px-4 py-8 border-2 border-dashed border-gray-400 rounded text-center text-xl">
+        <div
+          {...getRootProps()}
+          className="upload-area md:mb-8 px-4 py-8 border-2 border-dashed border-gray-400 rounded text-center text-xl"
+        >
           <input {...getInputProps()} />
           <p>Drag/drop your background image here or click to select an image</p>
         </div>
@@ -162,12 +174,26 @@ const MemeGenerator = ({ className }: MemeProps) => {
             ))}
           </Swiper>
           <button className="swiper-prev absolute left-0 inset-y-0 z-10 cursor-pointer outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="size-6"
+            >
               <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
             </svg>
           </button>
           <button className="swiper-next absolute right-0 inset-y-0 z-10 cursor-pointer outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="size-6"
+            >
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
             </svg>
           </button>
@@ -175,10 +201,16 @@ const MemeGenerator = ({ className }: MemeProps) => {
 
         {/* Action Buttons */}
         <div className="mt-4 md:mt-8 space-y-4">
-          <button className="w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md" onClick={downloadImage}>
+          <button
+            className="w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md"
+            onClick={downloadImage}
+          >
             Download
           </button>
-          <button className="w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md" onClick={resetCanvas}>
+          <button
+            className="w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md"
+            onClick={resetCanvas}
+          >
             Reset
           </button>
         </div>
