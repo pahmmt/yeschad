@@ -66,14 +66,14 @@ const MemeGenerator = ({ className }: { className: any }) => {
         const fabric = fabricRef.current
         if (fabric) {
           FabricImage.fromURL(data).then((img) => {
-            const aspectRatio = img.width / img.height // tỉ lệ khung hình
+            const aspectRatio = img.width / img.height
             const width = Math.min(fabric.width, img.width)
             const height = width / aspectRatio
             img.set({
               width: img.width,
               height: img.height,
-              scaleX: width / img.width, //new update
-              scaleY: height / img.height, //new update
+              scaleX: width / img.width,
+              scaleY: height / img.height,
             })
             fabric.backgroundImage = img
             updateDimensions()
