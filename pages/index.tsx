@@ -205,10 +205,10 @@ export default function Home() {
                   <p>
                     <a
                       href={swapUrl}
-                      className="bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black"
+                      className="bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black uppercase"
                       target="_blank"
                     >
-                      BUY $CHAD ON JUPITER SWAP
+                      Buy $chad on Jupiter Swap
                     </a>
                   </p>
                 </div>

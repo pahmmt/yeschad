@@ -202,13 +202,13 @@ const MemeGenerator = ({ className }: MemeProps) => {
         {/* Action Buttons */}
         <div className="mt-4 md:mt-8 space-y-4">
           <button
-            className="w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md"
+            className="w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md uppercase"
             onClick={downloadImage}
           >
             Download
           </button>
           <button
-            className="w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md"
+            className="w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md uppercase"
             onClick={resetCanvas}
           >
             Reset
