@@ -7,8 +7,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { useCallback, useEffect, useRef } from 'react'
 import { useDropzone } from 'react-dropzone'
 
-const MemeGenerator = ({ className }: { className: any }) => {
-  const stickers = [
+interface MemeProps {
+  className: string
+}
+
+const MemeGenerator = ({ className }: MemeProps) => {
+  const stickers: Array<string> = [
     '/stickers/1.png',
     '/stickers/2.png',
     '/stickers/3.png',
