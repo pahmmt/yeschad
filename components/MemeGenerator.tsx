@@ -1,4 +1,4 @@
-import { Canvas as FabricCanvas, FabricImage, FabricObject, FabricText, Group, Rect } from 'fabric'
+import { Canvas as FabricCanvas, FabricImage, FabricText, Group, Rect } from 'fabric'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { Navigation } from 'swiper/modules'
@@ -301,8 +301,11 @@ const MemeGenerator = ({ className }: MemeProps) => {
       {/* Canvas Column */}
       <div className="relative">
         {isActiveObject && (
-          <div className="absolute -top-[20px] left-1/2 transform -translate-x-1/2 m-2 flex items-center justify-center gap-2 z-10">
-            <button className="px-2 py-1 border-2 border-gray-500 outline-none bg-white rounded-md" onClick={flipSticker}>
+          <div className="absolute -top-[30px] left-1/2 transform -translate-x-1/2 m-2 flex items-center justify-center gap-2 z-10">
+            <button
+              className="px-2 py-1 border-2 border-gray-500 outline-none bg-white rounded-md"
+              onClick={flipSticker}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -318,7 +321,10 @@ const MemeGenerator = ({ className }: MemeProps) => {
                 />
               </svg>
             </button>
-            <button className="px-2 py-1 border-2 border-gray-500 outline-none bg-red-500 text-white rounded-md" onClick={deleteSticker}>
+            <button
+              className="px-2 py-1 border-2 border-gray-500 outline-none bg-red-500 text-white rounded-md"
+              onClick={deleteSticker}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
