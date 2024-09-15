@@ -1,4 +1,4 @@
-import { Canvas as FabricCanvas, FabricImage, FabricText, Group, Rect } from 'fabric'
+import { Canvas as FabricCanvas, FabricImage, FabricObject, FabricText, Group, Rect } from 'fabric'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { Navigation } from 'swiper/modules'
@@ -31,6 +31,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const fabricRef = useRef<FabricCanvas | null>(null) // Ref to store the Fabric canvas instance
+  const [isActiveObject, setIsActiveObject] = useState<boolean>(false)
 
   const updateDimensions = () => {
     const container = containerRef.current
@@ -59,7 +60,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
       const text = new FabricText(' @solyeschad ', {
         fontFamily: 'Tahoma',
         fontSize: width / 25,
-        fill: 'white',
+        fill: '#ffffff',
         originX: 'center',
         originY: 'center',
       })
@@ -95,7 +96,6 @@ const MemeGenerator = ({ className }: MemeProps) => {
         const fabric = fabricRef.current
         if (data && fabric) {
           FabricImage.fromURL(data).then((img) => {
-            console.log(img)
             fabric.backgroundImage = img
             updateDimensions()
           })
@@ -107,6 +107,39 @@ const MemeGenerator = ({ className }: MemeProps) => {
       'image/*': [],
     },
   })
+
+  const addSticker = (sticker: string) => {
+    const fabric = fabricRef.current
+    if (fabric && fabric.backgroundImage) {
+      FabricImage.fromURL(sticker).then((img) => {
+        fabric.add(img)
+      })
+    }
+  }
+
+  const flipSticker = () => {
+    const fabric = fabricRef.current
+    if (fabric) {
+      const target = fabric.getActiveObject()
+      if (target) {
+        target.set('flipX', !target.flipX)
+        fabric.renderAll()
+      }
+      console.log(target)
+    }
+  }
+
+  const deleteSticker = () => {
+    const fabric = fabricRef.current
+    if (fabric) {
+      const target = fabric.getActiveObject()
+      if (target) {
+        fabric.remove(target)
+        fabric.renderAll()
+      }
+      console.log(target)
+    }
+  }
 
   // Download image
   const downloadImage = useCallback(() => {
@@ -135,6 +168,17 @@ const MemeGenerator = ({ className }: MemeProps) => {
     fabricRef.current = new FabricCanvas(canvasRef.current!)
     // Handle resize event
     window.addEventListener('resize', updateDimensions)
+    // Handle active object
+    // Handle object selection changes
+    fabricRef.current.on('selection:created', () => {
+      setIsActiveObject(true)
+    })
+    fabricRef.current.on('selection:updated', () => {
+      setIsActiveObject(true)
+    })
+    fabricRef.current.on('selection:cleared', () => {
+      setIsActiveObject(false)
+    })
     updateDimensions()
     return () => {
       window.removeEventListener('resize', updateDimensions)
@@ -151,7 +195,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
         {/* Upload background */}
         <div
           {...getRootProps()}
-          className="upload-area md:mb-8 px-4 py-8 border-2 border-dashed border-gray-400 rounded text-center text-xl"
+          className="upload-area md:mb-8 px-4 py-8 border-2 border-dashed border-gray-500 rounded text-center text-xl"
         >
           <input {...getInputProps()} />
           <p>Drag/drop your background image here or click to select an image</p>
@@ -175,7 +219,10 @@ const MemeGenerator = ({ className }: MemeProps) => {
           >
             {stickers.map((sticker) => (
               <SwiperSlide key={sticker}>
-                <div className="flex justify-center items-center w-full h-full border-2 border-gray-400 rounded-md p-2 hover:border-black hover:bg-amber-100 cursor-pointer">
+                <div
+                  className="flex justify-center items-center w-full h-full border-2 border-gray-500 rounded-md p-2 hover:border-black hover:bg-amber-100 cursor-pointer"
+                  onClick={() => addSticker(sticker)}
+                >
                   <img src={sticker} alt="Sticker" className="h-20 pointer-events-none" />
                 </div>
               </SwiperSlide>
@@ -252,8 +299,46 @@ const MemeGenerator = ({ className }: MemeProps) => {
         </div>
       </div>
       {/* Canvas Column */}
-      <div className="flex items-center justify-center" ref={containerRef}>
-        <canvas ref={canvasRef} />
+      <div className="relative">
+        {isActiveObject && (
+          <div className="absolute -top-[20px] left-1/2 transform -translate-x-1/2 m-2 flex items-center justify-center gap-2 z-10">
+            <button className="px-2 py-1 border-2 border-gray-500 outline-none bg-white rounded-md" onClick={flipSticker}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
+                />
+              </svg>
+            </button>
+            <button className="px-2 py-1 border-2 border-gray-500 outline-none bg-red-500 text-white rounded-md" onClick={deleteSticker}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                />
+              </svg>
+            </button>
+          </div>
+        )}
+        <div className="flex items-center justify-center" ref={containerRef}>
+          <canvas className="border-2 border-gray-500 rounded-md" ref={canvasRef} />
+        </div>
       </div>
     </div>
   )
