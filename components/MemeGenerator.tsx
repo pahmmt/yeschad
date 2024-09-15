@@ -1,10 +1,10 @@
-import { Canvas as FabricCanvas, FabricImage } from 'fabric'
+import { Canvas as FabricCanvas, FabricImage, FabricText, Group, Rect } from 'fabric'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 
 interface MemeProps {
@@ -36,58 +36,65 @@ const MemeGenerator = ({ className }: MemeProps) => {
     const container = containerRef.current
     const fabric = fabricRef.current
 
-    if (container && fabric) {
-      const {
-        paddingLeft,
-        paddingRight,
-        paddingTop,
-        paddingBottom,
-        borderLeftWidth,
-        borderRightWidth,
-        borderTopWidth,
-        borderBottomWidth,
-      } = getComputedStyle(container)
-      const paddingX = parseFloat(paddingLeft) + parseFloat(paddingRight)
-      const paddingY = parseFloat(paddingTop) + parseFloat(paddingBottom)
-      const borderX = parseFloat(borderLeftWidth) + parseFloat(borderRightWidth)
-      const borderY = parseFloat(borderTopWidth) + parseFloat(borderBottomWidth)
-      const containerWidth = container.offsetWidth - paddingX - borderX
-      const containerHeight = container.offsetHeight - paddingY - borderY
-      const bgImage = fabric.backgroundImage
-      if (bgImage) {
-        // Scale the background image to fit the container width and maintain aspect ratio
-        const width = Math.min(containerWidth, bgImage.width)
-        const height = (bgImage.height * width) / bgImage.width
-        // Update canvas and image dimensions
-        fabric.setDimensions({ width, height })
-        bgImage.scaleToWidth(width)
-        bgImage.scaleToHeight(height)
-      } else {
-        fabric.setDimensions({ width: containerWidth, height: containerHeight })
-      }
-      fabric.calcOffset()
-      fabric.renderAll()
+    if (!container || !fabric) return
+
+    const { paddingLeft, paddingRight, borderLeftWidth, borderRightWidth } = getComputedStyle(container)
+
+    // Parse and calculate total padding and border dimensions
+    const parseAndSum = (...values: string[]) => values.reduce((sum, val) => sum + parseFloat(val), 0)
+    const paddingX = parseAndSum(paddingLeft, paddingRight)
+    const borderX = parseAndSum(borderLeftWidth, borderRightWidth)
+    const containerWidth = container.offsetWidth - paddingX - borderX
+    const bgImage = fabric.backgroundImage
+    let width = 0
+    let height = 0
+    if (bgImage) {
+      const ratio = bgImage.width / bgImage.height
+      width = Math.min(containerWidth, bgImage.width)
+      height = width / ratio
+      bgImage.scaleToWidth(width)
+      bgImage.scaleToHeight(height)
+
+      // Add watermark
+      const text = new FabricText(' @solyeschad ', {
+        fontFamily: 'Tahoma',
+        fontSize: width / 25,
+        fill: 'white',
+        originX: 'center',
+        originY: 'center',
+      })
+      const rect = new Rect({
+        width: text.width + 5,
+        height: text.height + 5,
+        fill: '#448ea7',
+        rx: 4,
+        ry: 4,
+        originX: 'center',
+        originY: 'center',
+      })
+      const group = new Group([rect, text], {
+        top: 2,
+        left: width - rect.width - 3,
+      })
+      fabric.add(group)
     }
+    // Update canvas and image dimensions
+    fabric.setDimensions({ width, height })
+    fabric.calcOffset()
+    fabric.renderAll()
   }
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: useCallback((acceptedFiles: File[]) => {
+      resetCanvas()
       const file = acceptedFiles[0]
       const reader = new FileReader()
       reader.onload = (event: any) => {
         const data = event.target.result
         const fabric = fabricRef.current
-        if (fabric) {
+        if (data && fabric) {
           FabricImage.fromURL(data).then((img) => {
-            const aspectRatio = img.width / img.height
-            const width = Math.min(fabric.width, img.width)
-            const height = width / aspectRatio
-            img.set({
-              width: img.width,
-              height: img.height,
-              scaleX: width / img.width,
-              scaleY: height / img.height,
-            })
+            console.log(img)
             fabric.backgroundImage = img
             updateDimensions()
           })
