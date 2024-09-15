@@ -82,6 +82,8 @@ const MemeGenerator = ({ className }: MemeProps) => {
     }
     // Update canvas and image dimensions
     fabric.setDimensions({ width, height })
+    fabric.wrapperEl.style.width = width.toString()
+    fabric.wrapperEl.style.height = height.toString()
     fabric.calcOffset()
     fabric.renderAll()
   }
