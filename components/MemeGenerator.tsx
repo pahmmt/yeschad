@@ -75,6 +75,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
       const group = new Group([rect, text], {
         top: 2,
         left: width - rect.width - 3,
+        selectable: false,
       })
       fabric.add(group)
     }
