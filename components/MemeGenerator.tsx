@@ -142,16 +142,20 @@ const MemeGenerator = ({ className }: MemeProps) => {
   const downloadImage = useCallback(() => {
     const fabric = fabricRef.current
     if (fabric) {
-      const scale = bgDimensions.width / fabric.width
-      const dataURL = fabric.toDataURL({
-        format: 'png',
-        multiplier: scale,
-      })
-      const randomName = `meme_${Date.now()}.png`
-      const link = document.createElement('a')
-      link.href = dataURL
-      link.download = randomName
-      link.click()
+      fabric.discardActiveObject()
+      fabric.renderAll()
+      setTimeout(() => {
+        const scale = bgDimensions.width / fabric.width
+        const dataURL = fabric.toDataURL({
+          format: 'png',
+          multiplier: scale,
+        })
+        const randomName = `meme_${Date.now()}.png`
+        const link = document.createElement('a')
+        link.href = dataURL
+        link.download = randomName
+        link.click()
+      }, 1000)
     }
   }, [bgDimensions])
 
