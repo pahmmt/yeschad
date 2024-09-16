@@ -35,17 +35,19 @@ const MemeGenerator = ({ className }: MemeProps) => {
     '/stickers/12.png',
     '/stickers/13.png',
   ]
-
+  // React Ref
   const containerRef = useRef<HTMLDivElement | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const fabricRef = useRef<FabricCanvas | null>(null)
-  const [isActiveObject, setIsActiveObject] = useState<boolean>(false)
   const watermarkRef = useRef<FabricObject | null>(null)
+  // React State
+  const [isActiveObject, setIsActiveObject] = useState<boolean>(false)
   const [bgDimensions, setBgDimensions] = useState<{ width: number; height: number }>({
     width: 0,
     height: 0,
   })
 
+  // Update dimension
   const updateDimensions = () => {
     const container = containerRef.current
     const fabric = fabricRef.current
