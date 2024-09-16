@@ -32,15 +32,16 @@ const MemeGenerator = ({ className }: MemeProps) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const fabricRef = useRef<FabricCanvas | null>(null) // Ref to store the Fabric canvas instance
   const [isActiveObject, setIsActiveObject] = useState<boolean>(false)
+  const [bgDimensions, setBgDimensions] = useState({
+    width: 0,
+    height: 0,
+  })
 
   const updateDimensions = () => {
     const container = containerRef.current
     const fabric = fabricRef.current
-
     if (!container || !fabric) return
-
     const { paddingLeft, paddingRight, borderLeftWidth, borderRightWidth } = getComputedStyle(container)
-
     // Parse and calculate total padding and border dimensions
     const parseAndSum = (...values: string[]) => values.reduce((sum, val) => sum + parseFloat(val), 0)
     const paddingX = parseAndSum(paddingLeft, paddingRight)
@@ -55,7 +56,6 @@ const MemeGenerator = ({ className }: MemeProps) => {
       height = width / ratio
       bgImage.scaleToWidth(width)
       bgImage.scaleToHeight(height)
-
       // Add watermark
       const text = new FabricText(' @solyeschad ', {
         fontFamily: 'Arial',
@@ -99,6 +99,12 @@ const MemeGenerator = ({ className }: MemeProps) => {
         if (data && fabric) {
           FabricImage.fromURL(data).then((img) => {
             fabric.backgroundImage = img
+            const dimensions = {
+              width: img.width,
+              height: img.height,
+            }
+            setBgDimensions(dimensions)
+            console.log(dimensions)
             updateDimensions()
           })
         }
@@ -134,15 +140,20 @@ const MemeGenerator = ({ className }: MemeProps) => {
 
   // Download image
   const downloadImage = useCallback(() => {
-    if (canvasRef.current) {
-      const dataURL = canvasRef.current.toDataURL('png', 1)
-      const randomName = `meme_${Math.random().toString(36).substr(2, 9)}.png`
+    const fabric = fabricRef.current
+    if (fabric) {
+      const scale = bgDimensions.width / fabric.width
+      const dataURL = fabric.toDataURL({
+        format: 'png',
+        multiplier: scale,
+      })
+      const randomName = `meme_${Date.now()}.png`
       const link = document.createElement('a')
       link.href = dataURL
       link.download = randomName
       link.click()
     }
-  }, [])
+  }, [bgDimensions])
 
   // Reset canvas
   const resetCanvas = useCallback(() => {
@@ -255,7 +266,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
 
         {/* Action Buttons */}
         <div className="mt-4 md:mt-8 space-y-4">
-        <button
+          <button
             className="flex items-center justify-center w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md uppercase"
             onClick={downloadImage}
           >
