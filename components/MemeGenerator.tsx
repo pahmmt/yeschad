@@ -59,19 +59,21 @@ const MemeGenerator = ({ className }: MemeProps) => {
       // Add watermark
       const text = new FabricText(' @solyeschad ', {
         fontFamily: 'Arial',
-        fontSize: width / 25,
+        fontSize: 18,
         fill: '#ffffff',
         originX: 'center',
         originY: 'center',
       })
       const rect = new Rect({
-        width: text.width + 5,
-        height: text.height + 5,
+        width: text.width + 6,
+        height: text.height + 6,
         fill: '#448ea7',
         rx: 4,
         ry: 4,
         originX: 'center',
         originY: 'center',
+        stroke: 'rgba(255,255,255,0.2)',
+        strokeWidth: 2,
       })
       const group = new Group([rect, text], {
         top: 2,
