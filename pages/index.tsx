@@ -88,13 +88,13 @@ export default function Home() {
           <div className="flex justify-center gap-4 font-semibold flex-wrap">
             <a
               href="#memes-maker"
-              className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black uppercase"
+              className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black uppercase"
             >
               Make Memes
             </a>
             <a
               href={swapUrl}
-              className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black uppercase"
+              className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black uppercase"
               target="_blank"
             >
               Buy $chad
@@ -205,7 +205,7 @@ export default function Home() {
                   <p>
                     <a
                       href={swapUrl}
-                      className="bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black [box-shadow:_2px_2px_var(--tw-shadow-color)] shadow-black uppercase"
+                      className="bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black uppercase"
                       target="_blank"
                     >
                       Buy $chad on Jupiter Swap

@@ -30,9 +30,9 @@ const MemeGenerator = ({ className }: MemeProps) => {
 
   const containerRef = useRef<HTMLDivElement | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
-  const fabricRef = useRef<FabricCanvas | null>(null) // Ref to store the Fabric canvas instance
+  const fabricRef = useRef<FabricCanvas | null>(null)
   const [isActiveObject, setIsActiveObject] = useState<boolean>(false)
-  const [bgDimensions, setBgDimensions] = useState({
+  const [bgDimensions, setBgDimensions] = useState<{ width: number; height: number }>({
     width: 0,
     height: 0,
   })
@@ -125,7 +125,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
     }
   }
 
-  const handleStickerAction = (action: string) => {
+  const handleStickerAction = (action: 'flip' | 'delete') => {
     const fabric = fabricRef.current
     if (!fabric) return
 
@@ -180,19 +180,10 @@ const MemeGenerator = ({ className }: MemeProps) => {
       transparentCorners: false,
     }
     fabricRef.current = new FabricCanvas(canvasRef.current!)
-    // Handle resize event
     window.addEventListener('resize', updateDimensions)
-    // Handle active object
-    // Handle object selection changes
-    fabricRef.current.on('selection:created', () => {
-      setIsActiveObject(true)
-    })
-    fabricRef.current.on('selection:updated', () => {
-      setIsActiveObject(true)
-    })
-    fabricRef.current.on('selection:cleared', () => {
-      setIsActiveObject(false)
-    })
+    fabricRef.current.on('selection:created', () => setIsActiveObject(true))
+    fabricRef.current.on('selection:updated', () => setIsActiveObject(true))
+    fabricRef.current.on('selection:cleared', () => setIsActiveObject(false))
     updateDimensions()
     return () => {
       window.removeEventListener('resize', updateDimensions)
