@@ -82,7 +82,8 @@ const MemeGenerator = ({ className }: MemeProps) => {
     }
     // Update canvas and image dimensions
     fabric.setDimensions({ width, height })
-    fabric.wrapperEl.style.display = width === 0 && height === 0 ? 'none' : 'block'
+    const displayWrapper = width === 0 && height === 0 ? 'none' : 'block'
+    fabric.wrapperEl.style.display = displayWrapper
     fabric.calcOffset()
     fabric.renderAll()
   }
@@ -118,28 +119,17 @@ const MemeGenerator = ({ className }: MemeProps) => {
     }
   }
 
-  const flipSticker = () => {
+  const handleStickerAction = (action: string) => {
     const fabric = fabricRef.current
-    if (fabric) {
-      const target = fabric.getActiveObject()
-      if (target) {
-        target.set('flipX', !target.flipX)
-        fabric.renderAll()
-      }
-      console.log(target)
-    }
-  }
+    if (!fabric) return
 
-  const deleteSticker = () => {
-    const fabric = fabricRef.current
-    if (fabric) {
-      const target = fabric.getActiveObject()
-      if (target) {
-        fabric.remove(target)
-        fabric.renderAll()
-      }
-      console.log(target)
-    }
+    fabric.getActiveObjects().forEach((obj) => {
+      if (action === 'flip') obj.set('flipX', !obj.flipX)
+      if (action === 'delete') fabric.remove(obj)
+    })
+
+    fabric.discardActiveObject()
+    fabric.renderAll()
   }
 
   // Download image
@@ -305,7 +295,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
           <div className="absolute -top-[30px] left-1/2 transform -translate-x-1/2 m-2 flex items-center justify-center gap-2 z-10">
             <button
               className="px-2 py-1 border-2 border-gray-500 outline-none bg-white rounded-md"
-              onClick={flipSticker}
+              onClick={() => handleStickerAction('flip')}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -324,7 +314,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
             </button>
             <button
               className="px-2 py-1 border-2 border-gray-500 outline-none bg-red-500 text-white rounded-md"
-              onClick={deleteSticker}
+              onClick={() => handleStickerAction('delete')}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
