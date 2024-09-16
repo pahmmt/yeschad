@@ -1,4 +1,4 @@
-import { Canvas as FabricCanvas, FabricImage, FabricText, Group, Rect } from 'fabric'
+import { Canvas as FabricCanvas, FabricImage, FabricText, Group, InteractiveFabricObject, Rect } from 'fabric'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { Navigation } from 'swiper/modules'
@@ -135,7 +135,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
   // Download image
   const downloadImage = useCallback(() => {
     if (canvasRef.current) {
-      const dataURL = canvasRef.current.toDataURL()
+      const dataURL = canvasRef.current.toDataURL('png', 1)
       const randomName = `meme_${Math.random().toString(36).substr(2, 9)}.png`
       const link = document.createElement('a')
       link.href = dataURL
@@ -156,6 +156,14 @@ const MemeGenerator = ({ className }: MemeProps) => {
   }, [])
 
   useEffect(() => {
+    InteractiveFabricObject.ownDefaults = {
+      ...InteractiveFabricObject.ownDefaults,
+      borderColor: 'white',
+      cornerColor: 'white',
+      cornerStyle: 'circle',
+      cornerSize: 8,
+      transparentCorners: false,
+    }
     fabricRef.current = new FabricCanvas(canvasRef.current!)
     // Handle resize event
     window.addEventListener('resize', updateDimensions)
@@ -247,7 +255,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
 
         {/* Action Buttons */}
         <div className="mt-4 md:mt-8 space-y-4">
-          <button
+        <button
             className="flex items-center justify-center w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md uppercase"
             onClick={downloadImage}
           >
