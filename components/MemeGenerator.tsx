@@ -1,4 +1,12 @@
-import { Canvas as FabricCanvas, FabricImage, FabricText, Group, InteractiveFabricObject, Rect } from 'fabric'
+import {
+  Canvas as FabricCanvas,
+  FabricImage,
+  FabricObject,
+  FabricText,
+  Group,
+  InteractiveFabricObject,
+  Rect,
+} from 'fabric'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { Navigation } from 'swiper/modules'
@@ -32,6 +40,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const fabricRef = useRef<FabricCanvas | null>(null)
   const [isActiveObject, setIsActiveObject] = useState<boolean>(false)
+  const watermarkRef = useRef<FabricObject | null>(null)
   const [bgDimensions, setBgDimensions] = useState<{ width: number; height: number }>({
     width: 0,
     height: 0,
@@ -56,31 +65,44 @@ const MemeGenerator = ({ className }: MemeProps) => {
       height = width / ratio
       bgImage.scaleToWidth(width)
       bgImage.scaleToHeight(height)
-      // Add watermark
-      const text = new FabricText(' @solyeschad ', {
-        fontFamily: 'Arial',
-        fontSize: 18,
-        fill: '#ffffff',
-        originX: 'center',
-        originY: 'center',
-      })
-      const rect = new Rect({
-        width: text.width + 6,
-        height: text.height + 6,
-        fill: '#448ea7',
-        rx: 4,
-        ry: 4,
-        originX: 'center',
-        originY: 'center',
-        stroke: 'rgba(255,255,255,0.2)',
-        strokeWidth: 2,
-      })
-      const group = new Group([rect, text], {
-        top: 2,
-        left: width - rect.width - 3,
-        selectable: false,
-      })
-      fabric.add(group)
+      // Add watermark if it doesn't already exist
+      if (!watermarkRef.current) {
+        const text = new FabricText(' @solyeschad ', {
+          fontFamily: 'Arial',
+          fontSize: 18,
+          fill: '#ffffff',
+          originX: 'center',
+          originY: 'center',
+        })
+
+        const rect = new Rect({
+          width: text.width + 6,
+          height: text.height + 6,
+          fill: '#448ea7',
+          rx: 4,
+          ry: 4,
+          originX: 'center',
+          originY: 'center',
+          stroke: 'rgba(255,255,255,0.2)',
+          strokeWidth: 2,
+        })
+
+        const group = new Group([rect, text], {
+          top: 2,
+          left: width - rect.width - 3,
+          selectable: false,
+        })
+
+        fabric.add(group)
+        watermarkRef.current = group // Store reference to the watermark
+      } else {
+        // Update watermark position if it already exists
+        const watermark = watermarkRef.current
+        watermark.set({
+          top: 2,
+          left: width - watermark.width - 3,
+        })
+      }
     }
     // Update canvas and image dimensions
     fabric.setDimensions({ width, height })
@@ -106,7 +128,6 @@ const MemeGenerator = ({ className }: MemeProps) => {
               height: img.height,
             }
             setBgDimensions(dimensions)
-            console.log(dimensions)
             updateDimensions()
           })
         }
@@ -186,6 +207,11 @@ const MemeGenerator = ({ className }: MemeProps) => {
     fabricRef.current.on('selection:created', () => setIsActiveObject(true))
     fabricRef.current.on('selection:updated', () => setIsActiveObject(true))
     fabricRef.current.on('selection:cleared', () => setIsActiveObject(false))
+    fabricRef.current.on('object:moving', () => {
+      if (fabricRef.current && watermarkRef.current) {
+        fabricRef.current.bringObjectToFront(watermarkRef.current)
+      }
+    })
     updateDimensions()
     return () => {
       window.removeEventListener('resize', updateDimensions)
