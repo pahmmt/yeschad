@@ -85,7 +85,7 @@ export default function Home() {
             className="w-14 md:w-16 h-auto block py-4"
             alt="Yes Chad Logo"
           />
-          <div className="flex justify-center gap-4 font-semibold flex-wrap">
+          <div className="flex justify-center gap-2 md:gap-4 font-semibold flex-wrap">
             <a
               href="#memes-maker"
               className="flex items-center bg-amber-100 hover:bg-white px-2 py-1 sm:px-4 sm:py-2 rounded-md border-2 border-black uppercase"
