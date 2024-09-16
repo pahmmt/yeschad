@@ -203,7 +203,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
   }, [])
 
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 p-4 md:p-8 ${className}`}>
+    <div className={`p-4 md:p-8 space-y-8 md:space-y-4 ${className}`}>
       {/* Tools Column */}
       <div className="space-y-4">
         {/* Upload background */}
