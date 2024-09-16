@@ -58,7 +58,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
 
       // Add watermark
       const text = new FabricText(' @solyeschad ', {
-        fontFamily: 'Tahoma',
+        fontFamily: 'Arial',
         fontSize: width / 25,
         fill: '#ffffff',
         originX: 'center',
