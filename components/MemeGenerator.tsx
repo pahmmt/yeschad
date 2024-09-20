@@ -21,6 +21,7 @@ interface MemeProps {
 
 const MemeGenerator = ({ className }: MemeProps) => {
   const stickers: Array<string> = [
+    '/stickers/0.png',
     '/stickers/1.png',
     '/stickers/2.png',
     '/stickers/3.png',
