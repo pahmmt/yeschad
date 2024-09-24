@@ -142,6 +142,23 @@ const MemeGenerator = ({ className }: MemeProps) => {
     },
   })
 
+  const uploadMeme = (event: any) => {
+    const file = event.target.files?.[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onload = (e: any) => {
+        const data = e.target.result
+        const fabric = fabricRef.current
+        if (data && fabric) {
+          FabricImage.fromURL(data).then((img) => {
+            fabric.add(img) // Add uploaded meme onto the canvas
+          })
+        }
+      }
+      reader.readAsDataURL(file)
+    }
+  }
+
   const addSticker = (sticker: string) => {
     const fabric = fabricRef.current
     if (fabric && fabric.backgroundImage) {
@@ -235,6 +252,13 @@ const MemeGenerator = ({ className }: MemeProps) => {
         >
           <input {...getInputProps()} />
           <p>Drag/drop your background image here or click to select an image</p>
+        </div>
+        {/* Upload Buttons */}
+        <div className="mt-4 md:mt-8 space-y-4">
+          <label className="flex items-center justify-center w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md uppercase">
+            <span>Upload Your Meme</span>
+            <input type="file" className="hidden" onChange={uploadMeme} accept="image/*" />
+          </label>
         </div>
 
         {/* Sticker Carousel */}
