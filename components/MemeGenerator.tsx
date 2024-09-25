@@ -241,7 +241,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
       {/* Tools Column */}
       <div className="space-y-4">
         {/* Upload Buttons */}
-        <div className="mt-4 md:mt-8 grid grid-cols-2 gap-2 md:gap-4">
+        <div className="grid grid-cols-2 gap-2 md:gap-4">
           <label className="flex items-center justify-center w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md uppercase">
             <span>Upload BG</span>
             <input type="file" className="hidden" onChange={uploadBackground} accept="image/*" />
