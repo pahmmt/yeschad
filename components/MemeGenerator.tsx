@@ -13,7 +13,6 @@ import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { useDropzone } from 'react-dropzone'
 
 interface MemeProps {
   className: string
@@ -115,10 +114,9 @@ const MemeGenerator = ({ className }: MemeProps) => {
     fabric.renderAll()
   }
 
-  const { getRootProps, getInputProps } = useDropzone({
-    onDrop: useCallback((acceptedFiles: File[]) => {
-      resetCanvas()
-      const file = acceptedFiles[0]
+  const uploadBackground = (event: any) => {
+    const file = event.target.files?.[0]
+    if (file) {
       const reader = new FileReader()
       reader.onload = (event: any) => {
         const data = event.target.result
@@ -136,11 +134,8 @@ const MemeGenerator = ({ className }: MemeProps) => {
         }
       }
       reader.readAsDataURL(file)
-    }, []),
-    accept: {
-      'image/*': [],
-    },
-  })
+    }
+  }
 
   const uploadMeme = (event: any) => {
     const file = event.target.files?.[0]
@@ -245,18 +240,14 @@ const MemeGenerator = ({ className }: MemeProps) => {
     <div className={`p-4 md:p-8 space-y-8 md:space-y-4 ${className}`}>
       {/* Tools Column */}
       <div className="space-y-4">
-        {/* Upload background */}
-        <div
-          {...getRootProps()}
-          className="upload-area md:mb-8 px-4 py-8 border-2 border-dashed border-gray-500 rounded text-center text-xl"
-        >
-          <input {...getInputProps()} />
-          <p>Drag/drop your background image here or click to select an image</p>
-        </div>
         {/* Upload Buttons */}
-        <div className="mt-4 md:mt-8 space-y-4">
+        <div className="mt-4 md:mt-8 grid grid-cols-2 gap-2 md:gap-4">
           <label className="flex items-center justify-center w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md uppercase">
-            <span>Upload Your Meme</span>
+            <span>Upload BG</span>
+            <input type="file" className="hidden" onChange={uploadBackground} accept="image/*" />
+          </label>
+          <label className="flex items-center justify-center w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md uppercase">
+            <span>Upload Meme</span>
             <input type="file" className="hidden" onChange={uploadMeme} accept="image/*" />
           </label>
         </div>
@@ -316,7 +307,7 @@ const MemeGenerator = ({ className }: MemeProps) => {
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-4 md:mt-8 space-y-4">
+        <div className="mt-4 md:mt-8 space-y-2 md:space-y-4">
           <button
             className="flex items-center justify-center w-full bg-amber-100 hover:bg-white px-4 py-2 rounded-md font-semibold border-2 border-black shadow-md uppercase"
             onClick={downloadImage}
